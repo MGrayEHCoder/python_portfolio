@@ -6,6 +6,12 @@ This project implements a Monte Carlo simulation of the two-dimensional Ising mo
 
 The simulation uses a 32 × 32 spin lattice. Each spin is initialized randomly to either +1 or -1, and the system is then evolved through repeated spin updates based on the energy change associated with flipping an individual spin.
 
+## Simulation
+
+The animation below shows the evolution of the spin lattice during the Monte Carlo simulation.
+
+![Ising Model Monte Carlo Simulation](images/ising_model.gif)
+
 ## Methods
 
 The simulation includes:
