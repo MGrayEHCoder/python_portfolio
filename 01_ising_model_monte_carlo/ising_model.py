@@ -1,12 +1,18 @@
-#PHY 592 - Monte Carlo Simulation of Ising Model
+#Monte Carlo Simulation of Ising Model
 #Michael Gray
 #10/22/24
+
+
+from pathlib import Path
 
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import random
 import pandas as pd
+
+PROJECT_DIR = Path(__file__).resolve().parent
+DATA_DIR = PROJECT_DIR / "data"
 
 Gridsize = 32
 spinState = np.ones((Gridsize,Gridsize))
@@ -74,16 +80,13 @@ def getData(timesSteps):
         Ets = CalcStatesE(T,timesSteps)
         df[f'Energy @ {T}'] = Ets
     
-    df.to_csv('IsingModelData.csv')
+    df.to_csv(DATA_DIR / 'IsingModelData.csv')
 
 
 
 getData(2000)    
 '''
 fig, ax = plt.subplots()
-
-
-
 
 ts = np.linspace(0,1,timeSteps)
 
@@ -101,4 +104,6 @@ ani.save('IsingModel.gif')
 fig, ax = plt.subplots()
 ax.plot(ts,Ets)
 fig.savefig('TotalEnergyVsTime.png')
+
 '''
+

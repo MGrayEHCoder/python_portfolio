@@ -1,30 +1,79 @@
-# Ising Model Monte Carlo Simulation
+# Ising Model Monte Carlo Simulation and Analysis
 
 ## Overview
 
-This project implements a Monte Carlo simulation of the two-dimensional Ising model using Python. The simulation models a square lattice of interacting spins and examines how the total energy of the system changes as a function of temperature.
+This project implements a Monte Carlo simulation of the two-dimensional Ising model and analyzes the resulting data using Python.
 
-The simulation uses a 32 × 32 spin lattice. Each spin is initialized randomly to either +1 or -1, and the system is then evolved through repeated spin updates based on the energy change associated with flipping an individual spin.
+The simulation models a square lattice of interacting spins. Each spin is initialized randomly to either +1 or -1, and the system is evolved through repeated spin updates based on the energy associated with flipping individual spins.
+
+The simulation uses a 32 × 32 lattice and evaluates the system over a range of temperatures. The resulting energy data is saved and then analyzed to examine how the average energy and specific heat vary with temperature.
+
+## Project Structure
+
+```text
+01_ising_model_monte_carlo/
+│
+├── README.md
+├── requirements.txt
+│
+├── ising_model.py
+├── ising_analysis.py
+│
+├── data/
+│   └── IsingModelData.csv
+│
+├── output/
+│   ├── EnergyVsSteps.png
+│   ├── AverageEnergyVsTemperature.png
+│   └── SpecificHeatVsTemperature.png
+│
+└── images/
+    └── ising_model.gif
 
 ## Simulation
+
+The `ising_model.py` program performs the Montel Carlo simulation.
+
+The simulation:
+
+* Creates a 32 x 32 spin lattice
+* Randomly initializes the spins
+* Updates individual spins based on the energy change associated with a spin flip
+* Uses periodic boundary conditions
+* Calculates the total energy of the system
+* Runs the simulation over multiple temperatures
+* Records the resulting energy data
+
+The temperatures used by the simulation range from 1.5 to 3.3.
+
+# Simulation Animation 
 
 The animation below shows the evolution of the spin lattice during the Monte Carlo simulation.
 
 ![Ising Model Monte Carlo Simulation](images/ising_model.gif)
 
-## Methods
+## Data Analysis
 
-The simulation includes:
+The `ising_analysis.py` program reads the simulation data and performs additional analysis.
 
-* Random initialization of the spin lattice
-* Temperature-dependent spin updates
-* Periodic boundary conditions
-* Calculation of the total system energy
-* Monte Carlo sampling over multiple time steps
-* Data collection over a range of temperatures
-* Export of simulation results to CSV
+The analysis calculates:
 
-The simulation evaluates temperatures from 1.5 to 3.3 in increments of 0.2 and records the calculated energy as the simulation progresses.
+* Average energy
+* Specific heat
+* Energy as a function of simulation steps
+* Average energy as a function of temperature
+* Specific heat as a function of temperature
+
+The analysis excludes the first 30% of the simulation data when calculating the average energy and specific heat.
+
+## Results
+
+![Energy vs. Monte Carlo Steps](output/EnergyVsSteps.png)
+
+![Average Energy vs. Temperature](output/AverageEnergyVsTemperature.png)
+
+![Specific Heat vs. Temperature](output/SpecificHeatVsTemperature.png)
+
 
 ## Python Libraries
 
@@ -52,34 +101,16 @@ Run the simulation with:
 python ising_model.py
 ```
 
-The simulation generates a CSV file containing the energy data:
+Run the analysis:
 
-```text
-IsingModelData.csv
+```Bash
+python ising_analysis.py
 ```
 
-## Output
+The resulting figures are saved in the `output` directory
 
-The primary output is a CSV file containing the calculated system energy at different temperatures and simulation steps.
+## Project Goals
 
-The original project also includes functionality for visualizing the evolution of the spin lattice and plotting total energy versus time.
+The goal of this project was to simulate the behavior of the two-dimensional Ising model using Monte Carlo methods and analyze the resulting system energy as a function of temperature.
 
-## Project Structure
-
-```text
-01-ising-model-monte-carlo/
-├── ising_model.py
-├── requirements.txt
-└── README.md
-```
-
-## Future Improvements
-
-Potential improvements to the simulation include:
-
-* Adding magnetization calculations
-* Measuring additional thermodynamic quantities
-* Improving the organization of simulation parameters
-* Adding automated visualization of simulation results
-* Comparing simulation results across different lattice sizes
-* Investigating behavior near the critical temperature
+The project combines numerical simulation, statistical analysis, data processing, and scientific visualization in Python.
