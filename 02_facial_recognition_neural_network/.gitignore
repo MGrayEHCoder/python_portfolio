@@ -1,0 +1,9 @@
+# Private training images
+TrainingData/
+
+# Trained neural network model
+*.keras
+
+# Python cache files
+__pycache__/
+*.pyc
