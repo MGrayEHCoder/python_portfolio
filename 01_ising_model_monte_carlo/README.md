@@ -29,6 +29,7 @@ The simulation uses a 32 × 32 lattice and evaluates the system over a range of 
 │
 └── images/
     └── ising_model.gif
+```
 
 ## Simulation
 
