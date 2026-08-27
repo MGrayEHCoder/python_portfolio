@@ -35,6 +35,7 @@ The goal is to investigate whether polymer structural classification can be perf
 │
 └── output/
     └── Trained models (not included)
+```
 
 ## Neural Network Approaches 
 
