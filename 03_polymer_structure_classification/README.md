@@ -37,7 +37,7 @@ The goal is to investigate whether polymer structural classification can be perf
 
 ## Neural Network Approaches 
 
-# 1. Phase-Space / Property-Based Network 
+### 1. Phase-Space / Property-Based Network 
 The first neural network uses physical and statistical properties derived from the polymer simulation. This derivation does take some processing on the part of the researcher.
 
 Coordinate information is removed during preprocessing, leaving the network to classify polymer structures using the remaining features. 
@@ -56,7 +56,7 @@ Output — Softmax
 ```
 The number of output neurons is determined automatically from the number of structure classes present in the dataset.
 
-# 2. Coordinate-Based Network
+### 2. Coordinate-Based Network
 The second neural network uses the polymer's coordinate information directly.
 
 The XYZ coordinates of the polymer aer retained while simulation and derived propery information is removed. This coordinate data comes directly from the simulations.
@@ -85,7 +85,7 @@ Output — Softmax
 ## Data Preprocessing 
 The preprocessing programs perform several operations before the data is supplied to the neural networks.
 
-# 1. Phase-Space Data
+### 1. Phase-Space Data
 The phase-space preprocessing program:
 * Loads the original simulation data
 * Removes polymer coordinate information
@@ -97,7 +97,7 @@ The phase-space preprocessing program:
 * Normalizes the input features using the training dataset
 * Saves the processed datasets locally
 
-# 2. Coordinate Data
+### 2. Coordinate Data
 The coordinate preprocessing program:
 * Loads the original simulation data
 * Removes simulation metadata and derived quantities
@@ -140,25 +140,25 @@ The test program evaluates both neural networks and reports their classification
 
 ## Running the Project
 
-# 1. Install Dependencies
+### 1. Install Dependencies
 From the project directory:
 ```Bash
 py -m pip install -r requirements.txt
 ```
 
-# 2. Prepare Data
+### 2. Prepare Data
 ```Bash
 py preprocessing/data_formatting_phase.py
 py preprocessing/data_formatting_coordinate.py
 ```
 
-# 3. Train the Networks
+### 3. Train the Networks
 ```Bash
 py polymer_coordinates_NN_training.py
 py polymer_phase_space_NN_training.py
 ```
 
-# 4. Test the Networks
+### 4. Test the Networks
 ```Bash
 py polymer_NN_test.py
 ```
