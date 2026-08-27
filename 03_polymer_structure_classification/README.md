@@ -1,7 +1,6 @@
 # Polymer Structure Classification Using Neural Networks
 
 ## Overview
-
 This project investigates the use of neural networks to classify polymer structures generated from Monte Carlo simulation data.
 
 Two different neural network approaches are developed and compared:
@@ -14,8 +13,7 @@ The goal is to investigate whether polymer structural classification can be perf
 ---
 
 ## Project Structure
-
-```text
+```
 03_polymer_structure_classification/
 │
 ├── README.md
@@ -40,7 +38,6 @@ The goal is to investigate whether polymer structural classification can be perf
 ## Neural Network Approaches 
 
 # 1. Phase-Space / Property-Based Network 
-
 The first neural network uses physical and statistical properties derived from the polymer simulation. This derivation does take some processing on the part of the researcher.
 
 Coordinate information is removed during preprocessing, leaving the network to classify polymer structures using the remaining features. 
@@ -59,8 +56,7 @@ Output — Softmax
 ```
 The number of output neurons is determined automatically from the number of structure classes present in the dataset.
 
-# Coordinate-Based Network
-
+# 2. Coordinate-Based Network
 The second neural network uses the polymer's coordinate information directly.
 
 The XYZ coordinates of the polymer aer retained while simulation and derived propery information is removed. This coordinate data comes directly from the simulations.
@@ -87,11 +83,9 @@ Output — Softmax
 ```
 
 ## Data Preprocessing 
-
 The preprocessing programs perform several operations before the data is supplied to the neural networks.
 
-#Phase-Space Data
-
+# 1. Phase-Space Data
 The phase-space preprocessing program:
 * Loads the original simulation data
 * Removes polymer coordinate information
@@ -104,7 +98,6 @@ The phase-space preprocessing program:
 * Saves the processed datasets locally
 
 # 2. Coordinate Data
-
 The coordinate preprocessing program:
 * Loads the original simulation data
 * Removes simulation metadata and derived quantities
@@ -117,7 +110,6 @@ The coordinate preprocessing program:
 * Saves the processed datasets locally
 
 ## Class Label Handling
-
 The original simulation data does not necessarily contain every possible structure class in every dataset.
 
 For example, one dataset may contain:
@@ -173,7 +165,6 @@ py polymer_NN_test.py
 The trained models and processed datasets are generaated locally and are intentionally excluded from the GitHub repository.
 
 ## Data
-
 The original polymer simulation data used by this project was generated using a Monte Carlo simulation that was not created as part of this project.
 
 For that reason, the raw and processed datasets are not included in this repository.
