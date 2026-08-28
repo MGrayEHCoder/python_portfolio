@@ -132,3 +132,5 @@ This project demonstrates practical experience with:
 * Scientific visualization
 * TensorFlow/Keras
 
+## Acknowledgements
+This project was done under the instruction of Dr. James Hereford, Professor of Engineering Physics at Murray State University, and with the collaboration of Jak Kowalczik.

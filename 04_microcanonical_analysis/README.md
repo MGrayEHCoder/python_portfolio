@@ -218,3 +218,6 @@ The analysis contains several parameters associated with numerical differentiati
 These parameters should be treated as part of the analysis methodology rather than arbitrary machine-learning hyperparameters.
 
 The raw simulation and generated output files are exclued from version control.
+
+## Acknowledgements
+This project was done under the mentorship and in collaboration with Dr. Matthew Williams, Assistant Professor of Physics at Murray State University.

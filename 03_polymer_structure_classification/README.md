@@ -187,3 +187,6 @@ The primary focus is comparing whether polymer structural information can be lea
 * Direct monomer coordinate information
 
 The comparison provides insight into how effective neural networks are for this sort of problem, and how much a researcher must work to make them effective.
+
+## Acknowledgements
+This project was done under the mentorship of Dr. Matthew Williams, Assistant Professor of Physics at Murray State University.

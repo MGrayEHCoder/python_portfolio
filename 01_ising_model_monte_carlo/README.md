@@ -115,3 +115,6 @@ The resulting figures are saved in the `output` directory
 The goal of this project was to simulate the behavior of the two-dimensional Ising model using Monte Carlo methods and analyze the resulting system energy as a function of temperature.
 
 The project combines numerical simulation, statistical analysis, data processing, and scientific visualization in Python.
+
+## Acknowledgements
+This project was done under the instruction of Dr. Matthew Williams, Assistant Professor of Physics at Murray State University.
