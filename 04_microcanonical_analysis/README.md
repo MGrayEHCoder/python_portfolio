@@ -123,7 +123,7 @@ The program can also generate microcanonical diagnostic plots containing:
 
 These plots are useful for examining how the tranistion locations were determined.
 
-# Running the Analysis
+## Running the Analysis
 
 ### 1. Install the required packages
 From the project directory, run:
