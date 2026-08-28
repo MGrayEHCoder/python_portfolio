@@ -1,0 +1,22 @@
+# Simulation data
+data/
+
+# Analysis output
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# C/C++ build artifacts
+*.out
+*.o
+*.obj
+*.exe
+
+# Miscellaneous simulation files
+*.dat
+.venv/
