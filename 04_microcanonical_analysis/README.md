@@ -134,7 +134,7 @@ py -m pip install -r requirements.txt
 ### 2. Verify the data directory
 Make sure the required simulation data is located in the expected `data/` directory structure.
 
-Because the raw data is not included in teh repository, it must be supplied separately.
+Because the raw data is not included in the repository, it must be supplied separately.
 
 ### 3. Run the analysis
 Run:
@@ -220,4 +220,4 @@ These parameters should be treated as part of the analysis methodology rather th
 The raw simulation and generated output files are exclued from version control.
 
 ## Acknowledgements
-This project was done under the mentorship and in collaboration with Dr. Matthew Williams, Assistant Professor of Physics at Murray State University.
+This project was done under the mentorship of and in collaboration with Dr. Matthew Williams, Assistant Professor of Physics at Murray State University.
