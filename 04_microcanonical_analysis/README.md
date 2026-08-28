@@ -1,7 +1,6 @@
 # Microcanonical Analysis of Polymer Structure Transitions
 
 ## Overview
-
 This project analyzes polymer simulation data using a microcanonical approach to identify structural phase transitions.
 
 The analysis builds on simulation data used in the polymer structure classification neural-network project. Rather than classifying polymer configurations with a neural network, this project examines the thermodynamic behavior of the system directly and identifies phase transitions from features in the microcanonical entropy.
@@ -11,7 +10,6 @@ The resulting analysis produces phase diagrams showing the locations of detected
 ---
 
 ## Scientific Approach
-
 The analysis uses histogram reweighting to obtain the microcanonical entropy as a function of energy.
 
 The general workflow is:
@@ -37,10 +35,7 @@ The derivatives of the microcanonical entropy are used to identify changes in th
 
 Multiple derivative orders are examined in order to identify different order of phase transitions.
 
----
-
 ## Microcanonical Analysis
-
 The core analysis begins by reconstructing the microcanonical entropy from simulation data.
 
 For each bending strength, the program:
@@ -54,10 +49,7 @@ For each bending strength, the program:
 
 The higher-order repeat filtering is important because the same physical transition can appear in multiple derivatives. The analysis therefore compares detected transition energies and removes detections that occur sufficiently close to previously identified transitions.
 
----
-
 ## Determining the Derivative Window
-
 The Savizky-Golay filter requires a window length for calculating the derivaties.
 
 The `findWindowLength()` functions searches through possible window lengths and determines the number of detected transitions for each one.
@@ -66,10 +58,7 @@ A stable platequ in the number of detected transitions is used to select and app
 
 This helps reduce sensitivity to the particular smoothing window chosen for the derivative calculation.
 
----
-
 ## Phase Diagram
-
 The phase diagram combines the thermodynamic transition analysis with previously classified polymer structures.
 
 For each polymer structure, the program calculates a convex hull in energy/bending-strength space. These regions are then plotted together with the transitions locations obtained from the mocrocanonical analysis.
@@ -80,12 +69,9 @@ The resluting plot provides a visual comparison between:
 * Bending strength
 * Detected phase transitions
 
----
-
 ## Phase Transitions Markers
-
 Different marker shapes are used to distinguish the order of the detected phase transition.
-```
+```text
 o  →  1st Order Phase Transition
 s  →  2nd Order Phase Transition
 d  →  3rd Order Phase Transition
@@ -93,13 +79,10 @@ d  →  3rd Order Phase Transition
 ```
 A legend is generated automatically when the phase diagram is created.
 
----
-
 ## Data Organization
-
 The simulation data is expected to be organized approximately as follows:
 
-```
+```text
 data/
 └── 40/
     ├── 24-06-28_40_Constbend 0.5/
@@ -120,14 +103,11 @@ The simulation data is not included in this repository.
 
 The data used for this analysis originated from a Monte Carlo simulation that was not generated as a part of this project, so the raw simulation data is kept separate from the GitHub repository.
 
----
-
 ## Output
-
 Generated figures are stored in the `output/` directory.
 
 Examples include:
-```
+```text
 PhaseDiagram_L_40_ConstBend_0.5.png
 PhaseDiagram_L_40_ConstBend_0.625.png
 PhaseDiagram_L_40_ConstBend_0.75.png
@@ -143,9 +123,7 @@ The program can also generate microcanonical diagnostic plots containing:
 
 These plots are useful for examining how the tranistion locations were determined.
 
----
-
-Running the Analysis
+# Running the Analysis
 
 ### 1. Install the required packages
 From the project directory, run:
@@ -169,10 +147,7 @@ Polymer length: 40
 ```
 The resulting figure are saved to the `output/` directory.
 
----
-
 ## Main Functions
-
 `histReweight()`
 Performs histogram reweighting and calculates the microcanonical entropy as a function of energy.
 
@@ -193,10 +168,7 @@ Generates diagnostic plots of the microcanonical entropy and its first four deri
 `make_folder()`
 Constructs the paths to the simulation datasets for each strength.
 
----
-
 ## Parameters
-
 The current analysis examines polymer systems with:
 * Polymer length: `40`
 * Bending strengths:
@@ -205,13 +177,11 @@ The current analysis examines polymer systems with:
     * `0.75`
     * `0.875`
     * `1.0`
+
 The phase-region analysis also supports different potential widths through the `width` parameter.
 
----
-
 ## Project Structure
-
-```
+```text
 04_microcanonical_analysis/
 │
 ├── data/
@@ -226,10 +196,7 @@ The phase-region analysis also supports different potential widths through the `
 └── .gitignore
 ```
 
----
-
 ## Relationship to the Polymer Neural Network Project
-
 This project uses the same underlying polymer simulation dataset as the polymer structure classification neural network project.
 
 The two projects approach the data from different perspectives:
